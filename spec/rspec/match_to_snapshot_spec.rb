@@ -1,5 +1,1 @@
-describe "RSpec" do
-  describe "Match to snapshot" do
-        
-  end
-end
+# frozen_string_literal: true

@@ -9,8 +9,14 @@ gem "rake", "~> 13.0"
 
 gem "rspec", "~> 3.0"
 
+gem "actionview"
+gem "byebug"
+gem "rails", "~> 6"
 gem "rubocop", "~> 1.21"
 gem "view_component"
-gem "byebug"
-gem "actionview"
-gem "rails", "~> 6"
+
+gem "rubocop-rails", "~> 2.17"
+gem "rubocop-rake", "~> 0.6.0"
+gem "rubocop-rspec", "~> 2.15"
+
+gem "rubocop-minitest", "~> 0.23.2"

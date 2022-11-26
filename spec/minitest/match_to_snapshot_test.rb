@@ -1,13 +1,17 @@
+# frozen_string_literal: true
+
 require "view_component/test_helpers"
 require "view_component"
 require "rails"
 
 require "byebug"
 RSpec.describe "Minitest" do
-  class ViewComponent::Base
-    def self.config
-      config = Struct.new(:view_component_path)
-      config.new("jlds")
+  module ViewComponent
+    class Base
+      def self.config
+        config = Struct.new(:view_component_path)
+        config.new("jlds")
+      end
     end
   end
 
@@ -26,6 +30,7 @@ RSpec.describe "Minitest" do
     test "when application was submitted" do
       byebug
       rendered_component = HelloWorldComponent.new
+
       assert_match_snapshot(render_inline(rendered_component))
     end
   end
@@ -35,7 +40,7 @@ RSpec.describe "Minitest" do
       ViewComponent::TestHelpers.respond_to? :assert_match_snapshot
     end
 
-    it "should record rendered content to file" do
+    it "records rendered content to file" do
       HelloWorldComponentTest.new("new test").test_when_application_was_submitted
       byebug
     end
